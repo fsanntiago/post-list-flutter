@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:post_list/core/extensions/string_casing_extension.dart';
+import 'package:post_list/core/utils/navigation_utils.dart';
+import 'package:post_list/posts_list/views/widgets/post_item_widget.dart';
 
 import '../../models/post_model.dart';
 import '../../view_models/posts_view_models.dart';
 
 class HomeBody extends StatelessWidget {
-  PostsViewModel postsViewModel;
-  HomeBody({
+  final PostsViewModel postsViewModel;
+
+  const HomeBody({
     Key? key,
     required this.postsViewModel,
   }) : super(key: key);
@@ -27,28 +29,12 @@ class HomeBody extends StatelessWidget {
         padding: const EdgeInsets.all(12),
         itemBuilder: (context, index) {
           PostModel postModel = postsViewModel.postListModel[index];
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                postModel.title.toCapitalized(),
-                style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Text(
-                postModel.body.toCapitalized(),
-                style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 14,
-                ),
-              ),
-            ],
+          return PostItemWidget(
+            postModel: postModel,
+            onTap: () async {
+              postsViewModel.setSelectedPost(postModel);
+              openPostDetails(context);
+            },
           );
         },
         separatorBuilder: (context, index) => const Divider(

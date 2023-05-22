@@ -9,10 +9,12 @@ class PostsViewModel extends ChangeNotifier {
   bool _loading = false;
   List<PostModel> _postListModel = [];
   PostError? _postError;
+  PostModel? _selectedPost;
 
   bool get loading => _loading;
   List<PostModel> get postListModel => _postListModel;
   PostError? get postError => _postError;
+  PostModel? get selectedPost => _selectedPost;
 
   PostsViewModel() {
     getPosts();
@@ -29,6 +31,10 @@ class PostsViewModel extends ChangeNotifier {
 
   setPostError(PostError postError) {
     _postError = postError;
+  }
+
+  setSelectedPost(PostModel postModel) {
+    _selectedPost = postModel;
   }
 
   getPosts() async {
