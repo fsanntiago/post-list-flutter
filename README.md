@@ -1,16 +1,26 @@
-# post_list
+<h1 align="center" >
+  📃 Post List 
+</h1>
 
-A new Flutter project.
+<div style="align=center; display: flex; flex-direction: row; ">
+  <img style="height: auto; width: 55%; margin-right:2rem"   
+  src="https://ik.imagekit.io/dxznjlotn/Screenshot_1684777186.png?updatedAt=1684777590275">
+  <img style="height: auto; width: 55%;"   
+  src="https://ik.imagekit.io/dxznjlotn/Screenshot_1684780052.png?updatedAt=1684780073245">
+</div>
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 📕 About
 
-A few resources to get you started if this is your first Flutter project:
+**Post List** é uma aplicacao que mostra uma lista de dados vindo de uma API externa
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🔨 Tools
+
+- [ Flutter](https://flutter.dev/)
+
+---
+
+<p align="center">Done with 💙 by Fabricio Santiago</p>
